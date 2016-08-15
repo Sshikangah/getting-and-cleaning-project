@@ -27,9 +27,6 @@ str(SubjectTest)
 View(ActivityTest)
 View(SubjectTest)
 View(FeaturesNames)
-
-
-
 #1. merge Activity data, Subject data, Feature data
 Activity <- rbind(ActivityTest, ActivityTrain)
 Subject <- rbind(SubjectTest, SubjectTrain)
