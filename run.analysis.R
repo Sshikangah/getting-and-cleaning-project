@@ -119,4 +119,4 @@ dat1$participants <- as.factor(dat1$participants)
 dat2 <- data.table(dat1)
 glimpse(dat2)
 CleanData <- dat2[, lapply(.SD, mean), by = 'participants,activities']
-write.table(CleanData, file = "Tidy.txt", row.names = FALSE)
+write.table(CleanData, file = "Clean.txt", row.names = FALSE)
