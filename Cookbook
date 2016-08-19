@@ -12,15 +12,25 @@ train/y_train.txt
 features.txt
 activity_label.txt
 Downloaded syntax are located at run.analysis.R files.
-2.	Renaming columns and Merging datasets: 
-a.	Merge X_train.txt and Y_train.txt for activity training, 
-b.	Merge Y_test.txt and Y_test.txt for Activity testing, 
-c.	Subject_test.txt and subject_train.txt form participant data
-3.	Extracting only the measurements on the mean and standard deviation for each measurement.
-4.	Uses descriptive activity names to name the activities in the data set
-5.	Appropriately labels the data set with descriptive variable names.
-6.	From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+2.	Renaming columns of raw dataset
 
+3. 	Merge the training and the test sets to create one data set.
+a.  merge training data files using cbind
+b.  merge test data files using cbing
+c.  combine both training and test datasets to one dataset.
+d.  clean dataset for duplicates
+
+4.	Extracting only the measurements on the mean and standard deviation for each measurement.
+a.  created logical vector to separate variables with mean and std by false or true
+b.  select only those that are equal to true
+5.	Uses descriptive activity names to name the activities in the data set
+a.  Cleaning up the variable names by renaming ana replacing using gsub
+
+6.	Appropriately labels the data set with descriptive variable names.
+a.  Merging the cleanData with activityLabels to include descriptive acitvity names
+
+7.	From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+a. calculate means using aggregate, relabel activity variable and create cleanData.txt dataset
 
 Reference
 D. Anguita, A. Ghio, L. Oneto, X. Parra, J. L. Reyes-Ortiz, A Public Domain Dataset for Human Activity Recognition using Smartphones,  European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning (ESANN), pp. 437-442, Bruges, Belgium, 24-26 Apr. 2013.
